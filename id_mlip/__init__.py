@@ -1,2 +1,3 @@
-from dummy_script import show_message
+from .dummy_script import show_message
+
 
