@@ -20,10 +20,10 @@ jobs:
         docker build -t id-mlip -f Dockerfile.packaging .
   
   run-packaging-container:
-  needs: build-packaging-image
-  runs-on: ubuntu-latest
-  run: |
-    docker run -it id-mlip
+    needs: build-packaging-image
+    runs-on: ubuntu-latest
+    run: |
+      docker run -it id-mlip
 
   publish-mlip-package:
     needs: run-packaging-container
