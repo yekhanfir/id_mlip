@@ -9,22 +9,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
 
-    - name: Login to Docker Hub
-      uses: docker/login-action@v3
-      with:
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
-
-    - name: Build and push
-      uses: mr-smithers-excellent/docker-build-push@v6
-      with:
-        image: yekhanfir/id-mlip
-        tags: latest
-        registry: docker.io
-        dockerfile: Dockerfile.packaging
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
+      - name: Build and push
+        uses: mr-smithers-excellent/docker-build-push@v6
+        with:
+          image: yekhanfir/id-mlip
+          tags: latest
+          registry: docker.io
+          dockerfile: Dockerfile.packaging
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
       
 
   publish-mlip-package:
@@ -35,11 +39,6 @@ jobs:
       image: yekhanfir/id-mlip:latest
 
     steps:
-      - name: checkout
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          
       - name: build package
         run: |
           ls
