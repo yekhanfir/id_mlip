@@ -49,7 +49,7 @@ jobs:
           export TWINE_USERNAME=__token__
           export TWINE_PASSWORD=${{secrets.TWINE_ACCESS_TOKEN}}
 
-          cd open-sourcing
+          cd id_mlip
 
           python setup.py sdist bdist_wheel
           twine upload dist/*
