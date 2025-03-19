@@ -39,10 +39,10 @@ jobs:
     #   image: yekhanfir/id-mlip:latest
 
     steps:
-      - name: checkout
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+      # - name: checkout
+      #   uses: actions/checkout@v4
+      #   with:
+      #     token: ${{ secrets.GITHUB_TOKEN }}
       - name: build package
         run: |
           ls
