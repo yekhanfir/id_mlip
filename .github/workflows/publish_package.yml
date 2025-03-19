@@ -18,12 +18,11 @@ jobs:
 
       - name: build package
         run: |
-          pwd
-          cd open-sourcing
-          echo "starting build"
+          export TWINE_USERNAME=${{secrets.TWINE_USERNAME}}
+          export TWINE_PASSWORD=${{secrets.TWINE_PASSWORD}}
+          
           python setup.py sdist bdist_wheel
-          echo "build finished"
-
+          twine upload dist/*
 
 
   
