@@ -22,8 +22,10 @@ jobs:
   run-packaging-container:
     needs: build-packaging-image
     runs-on: ubuntu-latest
-    run: |
-      docker run -it id-mlip
+    steps:
+      - name: run container
+        run: |
+          docker run -it id-mlip
 
   publish-mlip-package:
     needs: run-packaging-container
