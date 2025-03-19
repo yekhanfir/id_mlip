@@ -36,9 +36,9 @@ jobs:
 
     container:
       image: yekhanfir/id-mlip:latest
-    # env:
-    #   DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-    #   DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+    env:
+      DOCKER_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+      DOCKER_PASSWORD: ${{ secrets.DOCKER_ACCESS_TOKEN }}
 
     steps:
           - name: build package
