@@ -2,7 +2,7 @@ name: Packaging
  
 on: 
   push:
-    branches: [release-202503191002]
+    branches: [main]
 
 jobs:
   build-packaging-image:
