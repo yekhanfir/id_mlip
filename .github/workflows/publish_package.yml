@@ -33,13 +33,13 @@ jobs:
     needs: build-packaging-image
     runs-on: ubuntu-latest
 
-    container:
-      image: yekhanfir/id-mlip:latest
+    # container:
+    #   image: yekhanfir/id-mlip:latest
 
     steps:
       - name: build package
         run: |
-          pwd
+          ls
           cd open-sourcing
           echo "starting build"
           python setup.py sdist bdist_wheel
