@@ -41,7 +41,8 @@ jobs:
 
       - name: build package
         run: |
-          ls
+          ls > tmp.txt
+          cat tmp.txt
           cd open-sourcing
           echo "starting build"
           python setup.py sdist bdist_wheel
