@@ -25,7 +25,7 @@ jobs:
     steps:
       - name: run container
         run: |
-          docker run -it id-mlip
+          docker run id-mlip
 
   publish-mlip-package:
     needs: run-packaging-container
