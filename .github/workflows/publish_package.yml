@@ -20,7 +20,9 @@ jobs:
         run: |
           export TWINE_USERNAME=${{secrets.TWINE_USERNAME}}
           export TWINE_PASSWORD=${{secrets.TWINE_PASSWORD}}
-
+          
+          cd open-sourcing
+          
           python setup.py sdist bdist_wheel
           twine upload dist/*
 
