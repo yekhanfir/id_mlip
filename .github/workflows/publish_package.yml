@@ -35,7 +35,7 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: docker.io/yekhanfir/id-mlip:latest
+      image: yekhanfir/id-mlip:latest
     # env:
     #   DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
     #   DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
