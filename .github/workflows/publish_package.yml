@@ -46,8 +46,8 @@ jobs:
           
       - name: build package
         run: |
-          export TWINE_USERNAME=${{secrets.TWINE_USERNAME}}
-          export TWINE_PASSWORD=${{secrets.TWINE_PASSWORD}}
+          export TWINE_USERNAME=__token__
+          export TWINE_PASSWORD=${{secrets.TWINE_ACCESS_TOKEN}}
 
           cd open-sourcing
 
