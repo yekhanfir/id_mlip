@@ -7,7 +7,7 @@ on:
 jobs:
 
   publish-mlip-package:
-    needs: build-packaging-image
+    # needs: build-packaging-image
     runs-on: ubuntu-latest
 
     steps:
@@ -20,7 +20,7 @@ jobs:
         run: |
           export TWINE_USERNAME=${{secrets.TWINE_USERNAME}}
           export TWINE_PASSWORD=${{secrets.TWINE_PASSWORD}}
-          
+
           python setup.py sdist bdist_wheel
           twine upload dist/*
 
