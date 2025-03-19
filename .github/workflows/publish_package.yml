@@ -38,13 +38,15 @@ jobs:
     needs: build-packaging-image
     runs-on: ubuntu-latest
 
-    container:
-      image: yekhanfir/id-mlip:latest
-
     steps:
+      - name: run container
+        run: |
+          docker pull yekhanfir/id-mlip:latest
+          docker run --rm yekhanfir/id-mlip:latest
+
       - name: build package
         run: |
-          
+          echo "$(pwd)"
           cd open-sourcing
           echo "starting build"
           python setup.py sdist bdist_wheel
