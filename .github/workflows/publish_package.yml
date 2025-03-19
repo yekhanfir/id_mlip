@@ -22,7 +22,7 @@ jobs:
       uses: mr-smithers-excellent/docker-build-push@v6
       with:
         image: yekhanfir/id-mlip
-        tags: v1, latest
+        tags: latest
         registry: docker.io
         dockerfile: Dockerfile.packaging
         username: ${{ secrets.DOCKERHUB_USERNAME }}
@@ -36,9 +36,6 @@ jobs:
 
     container:
       image: yekhanfir/id-mlip:latest
-    env:
-      DOCKER_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-      DOCKER_PASSWORD: ${{ secrets.DOCKER_ACCESS_TOKEN }}
 
     steps:
           - name: build package
