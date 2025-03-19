@@ -35,8 +35,8 @@ jobs:
     needs: build-packaging-image
     runs-on: ubuntu-latest
 
-    container:
-      image: yekhanfir/id-mlip:latest
+    # container:
+    #   image: yekhanfir/id-mlip:latest
 
     steps:
       - name: checkout
