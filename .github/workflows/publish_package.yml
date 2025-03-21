@@ -47,6 +47,7 @@ jobs:
       - name: build package
         run: |
           export POETRY_PYPI_TOKEN_PYPI=${{secrets.TWINE_ACCESS_TOKEN}}
+          poetry build
           poetry publish
 
 
