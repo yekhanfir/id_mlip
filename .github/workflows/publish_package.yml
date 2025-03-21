@@ -2,7 +2,7 @@ name: Packaging
  
 on: 
   push:
-    branches: [24-use-poetry-for-packaging]
+    branches: [main]
 
 jobs:
   build-packaging-image:
