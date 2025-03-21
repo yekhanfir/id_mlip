@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "mlip_jax"
+name = "id_mlip"
 version = "0.1.0"
 description = ""
 license = "LICENSE"
