@@ -46,11 +46,9 @@ jobs:
           
       - name: build package
         run: |
-          export TWINE_USERNAME=__token__
-          export TWINE_PASSWORD=${{secrets.TWINE_ACCESS_TOKEN}}
-
-          python setup.py sdist bdist_wheel
-          twine upload dist/*
+          export POETRY_PYPI_TOKEN_PYPI=${{secrets.TWINE_ACCESS_TOKEN}}
+          poetry build
+          poetry publish
 
 
 
