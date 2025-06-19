@@ -1,4 +1,4 @@
-.. _jax_md_simulation_engine:
+.. _jaxmd_simulation_engine:
 
 .. module:: mlip.simulation.jax_md.jax_md_simulation_engine
 
