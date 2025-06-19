@@ -39,6 +39,7 @@ orbax = "^0.1.9"
 roundmantissa = "^0.2.1"
 matscipy = "1.0.0"
 tdqm = "^0.0.1"
+jax-md = {git = "https://github.com/google/jax-md.git"}
 pydantic = "^2.10.2"
 tqdm-loggable = "^0.2"
 h5py = "^3.12.1"
