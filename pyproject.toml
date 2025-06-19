@@ -1,10 +1,10 @@
 [tool.poetry]
-name = "id_mlip"
-version = "0.1.0"
-description = ""
+name = "mlip"
+version = "0.1.1"
+description = "Machine Learning Interatomic Potentials in JAX"
 license = "LICENSE"
 authors = [
-    "Jules Tilly <j.tilly@instadeep.com>",
+    "InstaDeep",
 ]
 readme = "README.md"
 classifiers = [
@@ -19,9 +19,14 @@ classifiers = [
     "License :: OSI Approved :: Apache Software License",
 ]
 
+[tool.poetry.urls]
+"Homepage" = "https://github.com/instadeepai/mlip/"
+
 [tool.poetry.dependencies]
-python = ">=3.10,<3.12"
+python = ">=3.10,<=3.13"
 numpy = "^1.26.0"
+jax = "0.4.33"
+jaxlib = "0.4.33"
 ase = "^3.22.1"
 orbax-checkpoint = "0.5.2"
 omegaconf = "^2.3.0"
@@ -34,14 +39,9 @@ orbax = "^0.1.9"
 roundmantissa = "^0.2.1"
 matscipy = "1.0.0"
 tdqm = "^0.0.1"
-jax-md = "^0.2.8"
 pydantic = "^2.10.2"
 tqdm-loggable = "^0.2"
 h5py = "^3.12.1"
-
-[tool.poetry.group.jax.dependencies]
-jax = {extras = ["cuda12_local"], version = "0.4.33"}
-jaxlib = {extras = ["cuda12_local"], version = "0.4.33"}
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.4.0"
@@ -50,19 +50,6 @@ black = "24.2.0"
 pre-commit = "^4.0.1"
 sphinx = "^8.1.3"
 furo = "^2024.8.6"
-
-[tool.poetry.group.experiment.dependencies]
-jupyter = "^1.1.1"
-hydra-core = "^1.3.2"
-huggingface-hub = "^0.25.2"
-insta-fs = {version = "^0.2.0", source = "instafs"}
-cloudpathlib = "^0.19.0"
-neptune = "^1.12.0"
-
-[[tool.poetry.source]]
-name = "instafs"
-url = "https://gitlab.com/api/v4/projects/47354289/packages/pypi/simple"
-priority = "supplemental"
 
 [build-system]
 requires = ["poetry-core"]

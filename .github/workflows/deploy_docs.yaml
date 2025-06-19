@@ -1,6 +1,8 @@
 name: documentation
 
-on: [push, pull_request, workflow_dispatch]
+on:
+  push:
+    branches: [main]
 
 permissions:
   contents: write
@@ -8,15 +10,22 @@ permissions:
 jobs:
   docs:
     runs-on: ubuntu-latest
+    container:
+       image: python:3.10.12-slim-bullseye
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
       - name: Install dependencies
         run: |
-          pip install sphinx sphinx_rtd_theme myst_parser
+          apt-get update && apt-get install -y coreutils git
+          POETRY_VERSION=1.8.4
+          pip install -U pip setuptools
+          pip install poetry==${POETRY_VERSION}
+          poetry install
+
       - name: Sphinx build
         run: |
-          sphinx-build doc _build
+          poetry run sphinx-build -b html docs/source _build
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
