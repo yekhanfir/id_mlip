@@ -13,7 +13,6 @@ jobs:
     container:
        image: python:3.10.12-slim-bullseye
     steps:
-      - uses: actions/checkout@v4
       - name: Install dependencies
         run: |
           apt-get update && apt-get install -y coreutils git
@@ -22,6 +21,9 @@ jobs:
           pip install poetry==${POETRY_VERSION}
           poetry install
           poetry run pip install git+https://github.com/jax-md/jax-md.git
+
+      - name: checkout code
+        uses: actions/checkout@v4
 
       - name: Sphinx build
         run: |
