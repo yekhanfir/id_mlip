@@ -2,7 +2,9 @@ name: Tests and Linters 🧪
 
 on:
   push:
-    branches: [main]
+    branches:
+      - 'main'
+      - 'new-release*'
 
 jobs:
   linters:
