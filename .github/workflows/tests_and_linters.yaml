@@ -44,6 +44,12 @@ jobs:
       - name: checkout code 📂
         uses: actions/checkout@v4
 
+      - name: setup
+        run: |
+          apt-get update && apt-get install -y \
+          coreutils \
+          git
+
       - name: install poetry
         run: |
           POETRY_VERSION=1.8.4
