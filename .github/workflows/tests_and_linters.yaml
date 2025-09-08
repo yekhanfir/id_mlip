@@ -12,7 +12,6 @@ jobs:
     container:
        image: python:3.10.12-slim-bullseye
     steps:
-      # Workaround for https://github.com/actions/checkout/issues/1169
       - name: setup
         run: |
           apt-get update && apt-get install -y \
@@ -23,7 +22,6 @@ jobs:
       - name: checkout code 📦
         uses: actions/checkout@v4
 
-
       - name: install poetry
         run: |
           POETRY_VERSION=1.8.4
@@ -33,7 +31,6 @@ jobs:
 
       - name: run linters 🖌️
         run: |
-          git init
           poetry run pre-commit run --all-files --verbose
 
   tests:
@@ -43,12 +40,6 @@ jobs:
     steps:
       - name: checkout code 📂
         uses: actions/checkout@v4
-
-      - name: setup
-        run: |
-          apt-get update && apt-get install -y \
-          coreutils \
-          git
 
       - name: install poetry
         run: |
