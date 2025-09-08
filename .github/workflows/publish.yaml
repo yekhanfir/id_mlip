@@ -16,8 +16,8 @@ jobs:
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-      
-      - setup:
+
+      - name: setup
         run: |
           apt-get update && apt-get install -y \
           coreutils \
