@@ -28,4 +28,5 @@ jobs:
 
       - name: build and publish
         run: |
+          uv build
           uv publish --token ${{secrets.TWINE_ACCESS_TOKEN}}
