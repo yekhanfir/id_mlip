@@ -28,5 +28,4 @@ jobs:
 
       - name: build and publish
         run: |
-          export UV_PYPI_TOKEN_PYPI=${{secrets.TWINE_ACCESS_TOKEN}}
-          uv publish
+          uv publish --token ${{secrets.TWINE_ACCESS_TOKEN}}
