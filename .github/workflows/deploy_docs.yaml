@@ -14,10 +14,13 @@ jobs:
        image: python:3.10.12-slim-bullseye
     steps:
       - uses: actions/checkout@v4
-      - name: Install dependencies
+      - name: setup
         run: |
           apt-get update && apt-get install -y coreutils git curl
           curl -LsSf https://astral.sh/uv/install.sh | sh
+
+      - name: Install dependencies
+        run: |
           uv sync
           uv pip install git+https://github.com/jax-md/jax-md.git
 
