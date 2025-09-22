@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "mlip_audit"
+name = "mlipaudit"
 version = "0.0.1"
 description = ""
 license = "LICENSE"
