@@ -1,10 +1,10 @@
 [tool.poetry]
-name = "mlip_jax"
-version = "0.1.0"
+name = "mlip_audit"
+version = "0.0.1"
 description = ""
 license = "LICENSE"
 authors = [
-    "Jules Tilly <j.tilly@instadeep.com>",
+    "Yessine Khanfir <y.khanfir@instadeep.com>",
 ]
 readme = "README.md"
 classifiers = [
