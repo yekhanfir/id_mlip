@@ -46,7 +46,7 @@ jobs:
           
       - name: build package
         run: |
-          export POETRY_PYPI_TOKEN_PYPI=${{secrets.UV_PYPI_TOKEN}}
+          export POETRY_PYPI_TOKEN_PYPI=${{secrets.MLIPAUDIT_PYPI}}
           poetry build
           poetry publish
 
